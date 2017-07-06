@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get "/entries/new" => "entries#new", as: "new_entry"
   get "/entries/:id/edit" => "entries#edit", as: "edit_entry"
   get "/entries/:id" => "entries#show", as: "entry"
+  put "/entries/:id" => "entries#update", as: "update_entry"
 
 
 

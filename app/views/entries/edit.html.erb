@@ -1,7 +1,7 @@
 <h1> Edit entries form </h1>
 <h2><%= t(".title") %></h2>
 
-<%= form_for @entry do |form| %>
+<%= form_for @entry, html: {method:"put"} do |form| %>
   <%= render partial: '/entries/form', object: form %>
 
   <div class="submit-field">

@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  constraints Clearance::Constraints::SignedIn.new do
+    root to: 'entries#index', as: :signed_in_root
+  end
+
+  constraints Clearance::Constraints::SignedOut.new do
+    root to: 'clearance/sessions#new'
+  end
+
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
 
@@ -14,11 +22,13 @@ Rails.application.routes.draw do
 
   get "/entries" => "entries#index", as: "entries"
   post "/entries" => "entries#create"
-  get "/entries/new" => "entries#new", as: "new_entry"
+  get "/cities/:id/entries/new" => "entries#new", as: "new_entry"
   get "/entries/:id/edit" => "entries#edit", as: "edit_entry"
   get "/entries/:id" => "entries#show", as: "entry"
   put "/entries/:id" => "entries#update", as: "update_entry"
   delete "/entries/:id" => "entries#destroy"
+
+  get '/cities/:id' => 'cities#show', as: 'city'
 
 
 end

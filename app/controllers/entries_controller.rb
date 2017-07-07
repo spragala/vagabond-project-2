@@ -1,10 +1,11 @@
 class EntriesController < ApplicationController
   def index
-    @entries = Entry.all
+    @entries = current_user.entries
   end
 
   def new
     @entry = Entry.new
+    @city = City.find(params[:id])
   end
 
   def edit
@@ -38,7 +39,11 @@ class EntriesController < ApplicationController
   private
 
      def entry_params
-       params.require(:entry).permit(:title, :description) #-> this is enough (no need to "whitelist")
+       params.require(:entry).permit(:title, :description, :city_id)
+     end
+
+     def city_params
+       params.require(:city).permit(:id)
      end
 
 end

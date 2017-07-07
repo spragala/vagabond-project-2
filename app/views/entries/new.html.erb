@@ -3,6 +3,7 @@
 
   <%= form_for @entry do |form| %>
     <%= render partial: '/entries/form', object: form %>
+    <%= form.hidden_field :city_id, :value => @city.id %>
 
     <div class="submit-field">
       <%= form.submit %>

@@ -5,6 +5,7 @@ class EntriesController < ApplicationController
 
   def new
     @entry = Entry.new
+    @city = City.find(params[:id])
   end
 
   def edit
@@ -24,6 +25,7 @@ class EntriesController < ApplicationController
 
   def create
     @entry = current_user.entries.build(entry_params)
+    p @entry
     if @entry.save
       redirect_to @entry
     end
@@ -38,7 +40,11 @@ class EntriesController < ApplicationController
   private
 
      def entry_params
-       params.require(:entry).permit(:title, :description) #-> this is enough (no need to "whitelist")
+       params.require(:entry).permit(:title, :description, :city_id)
+     end
+
+     def city_params
+       params.require(:city).permit(:id)
      end
 
 end

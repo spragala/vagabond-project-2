@@ -1,7 +1,12 @@
 <h1>City show page</h1>
 <h3><%= @city.name %></h3>
 <p> <%= @city.country %></p>
-<p> <%= @entry.title %></p>
+
+<% @entries.each do |entry| %>
+<h3><%= entry.title %></h3>
+<p><%= entry.description %></p>
+<% end %>
+
 
 
 <%= link_to 'New Post', new_entry_path %>

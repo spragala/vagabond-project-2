@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   get "/entries" => "entries#index", as: "entries"
   post "/entries" => "entries#create"
-  get "/entries/new" => "entries#new", as: "new_entry"
+  get "/cities/:id/entries/new" => "entries#new", as: "new_entry"
   get "/entries/:id/edit" => "entries#edit", as: "edit_entry"
   get "/entries/:id" => "entries#show", as: "entry"
   put "/entries/:id" => "entries#update", as: "update_entry"

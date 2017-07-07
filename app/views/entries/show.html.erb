@@ -1,5 +1,6 @@
 <h1>Entry show page</h1>
 <h3><%= @entry.title %></h3>
 <p> <%= @entry.description %></p>
+<p>Author: <%= current_user.name %></p>
 
 <%= button_to "Delete", @entry, method: :delete %>

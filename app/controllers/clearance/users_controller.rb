@@ -2,7 +2,7 @@ class Clearance::UsersController < Clearance::BaseController
   if respond_to?(:before_action)
     before_action :redirect_signed_in_users, only: [:create, :new]
     skip_before_action :require_login, only: [:create, :new], raise: false
-    skip_before_action :authorize, only: [:create, :new], raise: false
+    skip_before_action :authorize, only: [:create, :new, :edit, :update], raise: false
   else
     before_filter :redirect_signed_in_users, only: [:create, :new]
     skip_before_filter :require_login, only: [:create, :new], raise: false
@@ -12,6 +12,25 @@ class Clearance::UsersController < Clearance::BaseController
   def new
     @user = user_from_params
     render template: "users/new"
+  end
+
+  def show
+    @user = user_from_params
+    render template: "users/show"
+  end
+
+  def edit
+    @user = current_user
+    render template: "users/edit"
+  end
+
+  def update
+    @user = current_user
+    h = permit_params.to_h
+    h.delete("password")
+      if @user.update(h)
+        redirect_to entries_path
+      end
   end
 
   def create

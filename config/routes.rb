@@ -13,11 +13,12 @@ Rails.application.routes.draw do
   get "/sign_up" => "clearance/users#new", as: "sign_up"
 
   get "/entries" => "entries#index", as: "entries"
+  post "/entries" => "entries#create"
   get "/entries/new" => "entries#new", as: "new_entry"
   get "/entries/:id/edit" => "entries#edit", as: "edit_entry"
   get "/entries/:id" => "entries#show", as: "entry"
   put "/entries/:id" => "entries#update", as: "update_entry"
-
+  delete "/entries/:id" => "entries#destroy"
 
 
 end

@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   def index
-    @entries = Entry.all
+    @entries = current_user.entries
   end
 
   def new
@@ -25,7 +25,6 @@ class EntriesController < ApplicationController
 
   def create
     @entry = current_user.entries.build(entry_params)
-    p @entry
     if @entry.save
       redirect_to @entry
     end

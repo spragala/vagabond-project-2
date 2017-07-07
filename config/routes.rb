@@ -28,5 +28,7 @@ Rails.application.routes.draw do
   put "/entries/:id" => "entries#update", as: "update_entry"
   delete "/entries/:id" => "entries#destroy"
 
+  get '/cities/:id' => 'cities#show', as: 'city'
+
 
 end

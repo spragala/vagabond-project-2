@@ -8,3 +8,5 @@
 <% @entries.each do |entry| %>
 <h3><%= link_to entry.title,  entry_path(entry.id) %></h3>
 <% end %>
+
+<%= link_to 'Edit Profile', edit_user_path(current_user) %>

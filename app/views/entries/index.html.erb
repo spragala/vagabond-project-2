@@ -1,12 +1,25 @@
-<h1>Hello, <%= current_user.name %> </h1>
-<h4>User since <%= current_user.created_at.strftime("%m/%d/%Y") %></h4>
-<p> Current City: <%= current_user.location %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="sidebar-nav-fixed affix">
+          <h1>Hello, <%= current_user.name %> </h1>
+          <h4>User since <%= current_user.created_at.strftime("%m/%d/%Y") %></h4>
+          <p> Current City: <%= current_user.location %>
+          <%= link_to 'Edit Profile', edit_user_path(current_user) %>
+      </div>
+    </div>  <!-- .col -->
+    <div class="col-md-8">
+
+      <% @entries.each do |entry| %>
+      <h3><%= link_to entry.title,  entry_path(entry.id) %></h3>
+      <p><%= entry.description %></p>
+      <%= link_to 'Read More',  entry_path(entry.id) %>
+      <% end %>
+
+    </div>
 
 
 
-
-<% @entries.each do |entry| %>
-<h3><%= link_to entry.title,  entry_path(entry.id) %></h3>
-<% end %>
-
-<%= link_to 'Edit Profile', edit_user_path(current_user) %>
+  </div>    <!-- .row -->
+</div>     <!-- .container -->

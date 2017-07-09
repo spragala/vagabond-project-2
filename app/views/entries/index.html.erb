@@ -12,9 +12,9 @@
     <div class="col-md-8">
 
       <% @entries.each do |entry| %>
-      <h3><%= link_to entry.title,  entry_path(entry.id) %></h3>
+      <h3><%= link_to entry.title,  entry_path(entry) %></h3>
       <p><%= entry.description %></p>
-      <%= link_to 'Read More',  entry_path(entry.id) %>
+      <%= link_to 'Read More',  entry_path(entry) %>
       <% end %>
 
     </div>

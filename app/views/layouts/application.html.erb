@@ -4,6 +4,8 @@
     <title>VagabondApp</title>
     <%= csrf_meta_tags %>
 
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500" rel="stylesheet">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -11,7 +13,7 @@
   <body>
 
     <% if signed_in? %>
-      <%= button_to 'Sign out', sign_out_path, method: :delete %>
+      <%= button_to 'Sign out', sign_out_path, method: :delete, class: 'btn btn-primary sign-out' %>
     <% else %>
       <%= link_to 'Sign in', sign_in_path %>
     <% end %>

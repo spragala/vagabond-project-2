@@ -29,6 +29,9 @@ class EntriesController < ApplicationController
     @entry = current_user.entries.build(entry_params)
     if @entry.save
       redirect_to @entry
+    else
+      flash[:error] = @entry.errors.full_messages.join(', ')
+      redirect_to @entry
     end
   end
 

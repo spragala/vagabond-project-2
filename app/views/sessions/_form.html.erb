@@ -1,22 +1,26 @@
-<%= form_for :session, url: session_path do |form| %>
-  <div class="text-field">
-    <%= form.label :email %>
-    <%= form.text_field :email, type: 'email' %>
-  </div>
 
-  <div class="password-field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
 
-  <div class="submit-field">
-    <%= form.submit %>
-  </div>
+<%= form_for :session, url: session_path, html: { class: 'form-horizontal col-sm-offset-8 col-sm-3 login-form' } do |form| %>
+    <h3 class="login-title"> Login </h3>
+    <hr>
+    <div class='text-field form-group'>
+      <%= form.label :email, class: 'sr-only' %>
+      <div class="col-sm-offset-1 col-sm-10">
+        <%= form.text_field :email, type: 'email', class: 'form-control', placeholder: 'Email Address' %>
+      </div>
+    </div>
 
-  <div class="other-links">
-    <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t(".sign_up"), sign_up_path %>
+    <div class='password-field form-group'>
+      <%= form.label :password, class: 'sr-only' %>
+      <div class='col-sm-offset-1 col-sm-10'>
+        <%= form.password_field :password, class: 'form-control', placeholder: 'Password' %>
+      </div>
+    </div>
+
+    <div class='submit-field actions form-group'>
+      <div class='col-sm-offset-1 col-sm-11'>
+        <%= form.submit 'Log in', class: 'btn btn-default' %>
+        <%= link_to t(".forgot_password"), new_password_path, class: 'forgot-password' %>
+      </div>
+    </div>
     <% end %>
-    <%= link_to t(".forgot_password"), new_password_path %>
-  </div>
-<% end %>

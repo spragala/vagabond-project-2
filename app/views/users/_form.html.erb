@@ -1,19 +1,25 @@
-<div class="text-field">
+
+<div class="text-field form-group">
   <%= form.label :name %>
-  <%= form.text_field :name, type: 'name' %>
+  <%= form.text_field :name, type: 'name', class: 'form-control', :required => true, placeholder: 'Full Name' %>
 </div>
 
-<div class="text-field">
+<div class="text-field form-group">
   <%= form.label :location %>
-  <%= form.text_field :location, type: 'location' %>
+  <%= form.text_field :location, type: 'location', class: 'form-control', :required => true, placeholder: 'Which city do you live in?' %>
 </div>
 
-<div class="text-field">
+<div class="text-field form-group">
   <%= form.label :email %>
-  <%= form.text_field :email, type: 'email' %>
+  <%= form.text_field :email, type: 'email', class: 'form-control', :required => true, placeholder: 'example@example.com' %>
 </div>
 
-<div class="password-field">
+<div class="password-field form-group">
   <%= form.label :password %>
-  <%= form.password_field :password %>
+  <%= form.password_field :password, class: 'form-control', :required => true, placeholder: 'Password must be TODO' %>
+</div>
+
+<div class="text-field form-group">
+  <%= form.label :image %>
+  <%= form.text_field :image, class: 'form-control', placeholder: 'Please provide a link to url image.' %>
 </div>

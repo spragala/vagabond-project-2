@@ -2,24 +2,24 @@ class EntriesController < ApplicationController
   before_action :require_login
 
   def index
-    @entries = current_user.entries
+    @entries = current_user.entries.order('created_at DESC')
   end
 
   def new
     @entry = Entry.new
-    @city = City.friendly.find(params[:id])
+    @city = City.find(params[:id])
   end
 
   def edit
-    @entry = Entry.friendly.find(params[:id])
+    @entry = Entry.find(params[:id])
   end
 
   def show
-    @entry = Entry.friendly.find(params[:id])
+    @entry = Entry.find(params[:id])
   end
 
   def update
-    @entry = Entry.friendly.find(params[:id])
+    @entry = Entry.find(params[:id])
         if @entry.update entry_params
           redirect_to @entry
         end
@@ -29,14 +29,11 @@ class EntriesController < ApplicationController
     @entry = current_user.entries.build(entry_params)
     if @entry.save
       redirect_to @entry
-    else
-      flash[:error] = @entry.errors.full_messages.join(', ')
-      redirect_to @entry
     end
   end
 
   def destroy
-    @entry = Entry.friendly.find(params[:id])
+    @entry = Entry.find(params[:id])
     @entry.destroy
     redirect_to entries_path
   end

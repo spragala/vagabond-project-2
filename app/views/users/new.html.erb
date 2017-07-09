@@ -1,15 +1,19 @@
-<div id="clearance" class="sign-up">
-  <h2><%= t(".title") %></h2>
 
-  <%= form_for @user do |form| %>
-    <%= render partial: '/users/form', object: form %>
 
-    <div class="submit-field">
-      <%= form.submit %>
-    </div>
+<div id='clearance' class='sign-up-container'>
 
-    <div class="other-links">
-      <%= link_to t(".sign_in"), sign_in_path %>
+
+  <%= form_for(@user, html: { class: 'form-horizontal col-sm-offset-2 col-sm-8 new-form' }) do |form| %>
+    <div class='sign-up-form col-sm-offset-2 col-sm-8'>
+      
+      <%= render partial: '/users/form', object: form %>
+
+      <div class="submit-field">
+        <%= form.submit 'Sign Up', class: 'btn btn-default' %>
+        <%= link_to 'Back', sign_in_path, class: 'btn btn-default' %>
+      </div>
+
     </div>
   <% end %>
+
 </div>

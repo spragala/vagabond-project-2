@@ -14,6 +14,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
 // Profile Page / Entries index
 
 // Header ---->
@@ -21,7 +25,7 @@
 div.profile {
   background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5) ), url('./chris-brignola-392.jpg') no-repeat top center;
   background-size: cover;
-  height: 300px;
+  height: 400px;
   margin: 0;
   max-width: 1920px;
   box-shadow: 0px 15px 20px -10px #666;
@@ -30,7 +34,7 @@ div.profile {
 }
 
 div.user-info {
-  top: 80px;
+  top: 150px;
 }
 
 .user-name {
@@ -66,9 +70,10 @@ span.glyphicon-map-marker {
 a.edit-profile {
   float: right;
   margin-right: 25px;
-  margin-top: 10px;
+  margin-top: 350px;
   border: none;
-  color: #fff;
+  border-radius: 50%;
+  color: #eee;
   background: transparent;
   font-family: 'Raleway', sans-serif;
 }
@@ -161,6 +166,72 @@ a.city-link {
 a.city-link:hover {
   text-decoration: none;
 }
+
+// Sign-up Form -->
+
+form#new_user {
+  background-color: #fff;
+  box-shadow: 0px 15px 20px -10px #666;
+  padding: 40px 0 40px 0;
+  margin-top: 40px;
+}
+
+.sign-up-container {
+  height: 100vh;
+  background-color: #eee;
+}
+
+// Navbar
+
+.title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+  color: #fff;
+  margin: 0;
+}
+
+a.sign-up {
+  color: #fff;
+  background: transparent;
+  border-color: #fff;
+  font-family: 'Raleway', sans-serif;
+}
+
+// Sign-in Welcome Page
+
+section.welcome-section {
+  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3) ), url('./splash-tween.jpg') no-repeat center center;
+  background-size: cover;
+  height: 400px;
+  margin: 0;
+}
+
+.login-form {
+  padding: 20px 0 20px 0;
+  border: solid 1px #eee;
+  border-radius: 8px;
+  margin-top: -200px;
+  margin-bottom: 100px;
+  background-color: #fff;
+  box-shadow: 0px 15px 20px -10px #666;
+}
+
+h3.login-title {
+  margin: 0 0 10px 0;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+a.forgot-password {
+  margin-left: 20px;
+  color: #999;
+}
+
+
+
+
+// Media Queries
 
 @media (max-width: 767px) {
   .city-icon {

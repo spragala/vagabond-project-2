@@ -4,7 +4,7 @@
     <title>VagabondApp</title>
     <%= csrf_meta_tags %>
 
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,900" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -12,11 +12,19 @@
 
   <body>
 
-    <% if signed_in? %>
-      <%= button_to 'Sign out', sign_out_path, method: :delete, class: 'btn btn-primary sign-out' %>
-    <% else %>
-      <%= link_to 'Sign in', sign_in_path %>
-    <% end %>
+    <nav class="nav-bar navbar-fixed-top" id="startchange">
+    <div class="container-fluid">
+      <div class="navbar-header col-xs-12">
+        <%= link_to 'Vagabond', entries_path, class: 'navbar-text navbar-left title' %>
+        <% if signed_in? %>
+          <%= button_to 'Sign out', sign_out_path, method: :delete, class: 'btn btn-default navbar-btn sign-out pull-right' %>
+        <% else %>
+          <%= link_to 'Sign up', sign_up_path, class: 'btn btn-default sign-up navbar-btn pull-right' %>
+        <% end %>
+      </div>
+    </div>
+  </nav>
+
 
     <div id="flash">
       <% flash.each do |key, value| %>

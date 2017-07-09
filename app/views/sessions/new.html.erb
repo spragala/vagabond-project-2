@@ -2,8 +2,28 @@
   <section class='welcome-section'>
   </section>
 
-
   <div class="row">
-      <%= render partial: '/sessions/form' %>
+    <%= render partial: '/sessions/form' %>
+  </div>
+
+  <div class="container">
+    <div class="row thumbnails">
+      <div class="col-xs-8 col-sm-4">
+        <a href="/cities/san-francisco" class="thumbnail">
+          <%= image_tag('san-francisco.jpg', class: 'city-icon') %>
+        </a>
+      </div>
+      <div class="col-xs-8 col-sm-4">
+        <a href="/cities/london" class="thumbnail">
+          <%= image_tag('london.jpg', class: 'city-icon') %>
+        </a>
+      </div>
+      <div class="col-xs-8 col-sm-4">
+        <a href="/cities/gibraltar" class="thumbnail">
+          <%= image_tag('gibraltar.jpg', class: 'city-icon') %>
+        </a>
+      </div>
     </div>
+  </div>
+
 </div>

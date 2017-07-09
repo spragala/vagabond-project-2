@@ -11,7 +11,159 @@
  * It is generally better to create a new file per style scope.
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
- 
+// Profile Page / Entries index
+
+// Header ---->
+
+div.profile {
+  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5) ), url('./chris-brignola-392.jpg') no-repeat top center;
+  background-size: cover;
+  height: 300px;
+  margin: 0;
+  max-width: 1920px;
+  box-shadow: 0px 15px 20px -10px #666;
+  position: relative;
+  z-index: 1;
+}
+
+div.user-info {
+  top: 80px;
+}
+
+.user-name {
+  font-weight: 400;
+  padding-bottom: 5px;
+  padding-top: 20px;
+  font-size: 35px;
+}
+
+.user-name, .location, .user-since {
+  margin: 0;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+span.glyphicon-map-marker {
+  margin-right: 5px;
+}
+
+.text-block {
+  display: inline-block;
+}
+
+.user-img {
+  width: 120px;
+  height: 120px;
+  float:left;
+  margin-right: 25px;
+  border-radius: 50%;
+}
+
+a.edit-profile {
+  float: right;
+  margin-right: 25px;
+  margin-top: 10px;
+  border: none;
+  color: #fff;
+  background: transparent;
+  font-family: 'Raleway', sans-serif;
+}
+
+a.edit-profile:hover {
+ background-color: transparent;
+ border: none;
+ border-radius: 50%;
+ color: #666;
+ transform: scale(1.5);
+}
+
+// end Header --->
+
+// Entry cards --->
+
+.entries-container {
+ position: relative;
+ padding: 20px 0 50px 0;
+ height: 100vh;
+ background-color: #eee;
+ z-index: 0;
+}
+
+div.entry {
+ margin: 25px 0 25px 0;
+ background-color: #fff;
+ padding: 10px;
+ box-shadow: 0px 15px 20px -10px #666;
+}
+
+.city-img {
+ border-right: 1px solid #eee;
+ height: 100px
+}
+
+.city-icon {
+  width: 100%;
+}
+
+h3.entry-title {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+}
+
+a.entry-title-link {
+  color: #ce5749;
+  text-decoration: none;
+}
+
+.btn-bar {
+  padding: 10px;
+
+}
+
+a.read-more {
+  float: left;
+  font-family: 'Raleway', sans-serif;
+  border-color: #ce5749;
+  color: #ce5749;
+}
+
+a.delete-entry, a.edit-entry {
+  border: none;
+  float: right;
+}
+
+ul.city-nav {
+  margin-top: 30px;
+  padding: 0;
+  border-left: 1px solid #fff;
+  padding-left: 30px;
+}
+
+li.city-list {
+  text-decoration: none;
+  display: inline;
+  font-family: 'Raleway', sans-serif;
+}
+
+a.city-link {
+  color: #fff;
+  margin-right: 30px;
+  font-weight: 300;
+  border-right: 1px solid #fff;
+  padding-right: 30px;
+}
+
+a.city-link:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .city-icon {
+    display: none;
+  }
+}

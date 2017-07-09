@@ -1,25 +1,56 @@
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="sidebar-nav-fixed affix">
-          <h1>Hello, <%= current_user.name %> </h1>
-          <h4>User since <%= current_user.created_at.strftime("%m/%d/%Y") %></h4>
-          <p> Current City: <%= current_user.location %>
-          <%= link_to 'Edit Profile', edit_user_path(current_user) %>
+
+
+      <div class="row profile">
+        <div class="user-info col-sm-offset-2 col-sm-8">
+          <%= image_tag('sample-profile.jpg', class: 'user-img') %>
+          <h1 class="user-name"><%= current_user.name %> </h1>
+          <p class="location">
+            <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+            <%= current_user.location %>
+          <p class="user-since">
+            <span class="glyphicon glyphicon-star"></span>
+            MC Elite since: <%= current_user.created_at.strftime("%m/%d/%Y") %>
+          </p>
+          <br>
+          <ul class='city-nav'>
+            <li class="city-list"><%= link_to 'San Francisco', city_path(1), class: 'city-link' %></li>
+            <li class="city-list"><%= link_to 'London', city_path(2), class: 'city-link' %></li>
+            <li class="city-list"><%= link_to 'Gibraltar', city_path(3), class: 'city-link' %></li>
+          </ul>
+        </div>
+        <%= link_to edit_user_path(current_user), class: 'btn btn-default edit-profile' do %>
+          <i class="glyphicon glyphicon-cog"></i>
+        <% end %>
+
       </div>
-    </div>  <!-- .col -->
-    <div class="col-md-8">
 
-      <% @entries.each do |entry| %>
-      <h3><%= link_to entry.title,  entry_path(entry) %></h3>
-      <p><%= entry.description %></p>
-      <%= link_to 'Read More',  entry_path(entry) %>
-      <% end %>
+    <div class="entries-container">
+      <div class="col-sm-offset-1 col-sm-10 entries">
+        <% @entries.each do |entry| %>
+        <div class="container-fluid entry">
+          <div class="row ">
+            <div class="city-img col-sm-2">
+              <%= image_tag('london.jpg', class: 'city-icon') %>
+            </div>
+            <div class="entry-text col-sm-8">
+              <h3 class="entry-title"><%= link_to entry.title,  entry_path(entry), class: 'entry-title-link' %></h3>
+              <p class="entry-body"><%= entry.description %></p>
+            </div>
+          </div>
+          <div class="row btn-bar">
+            <div class="col-sm-offset-2 col-sm-8">
+              <%= link_to edit_entry_path(entry), class: 'btn btn-default edit-entry' do %>
+                <i class='glyphicon glyphicon-pencil'></i>
+              <% end %>
+              <%= link_to entry_path(entry.id), method: :delete, class: 'btn btn-default delete-entry' do %>
+                <i class='glyphicon glyphicon-trash'></i>
+              <% end %>
+              <%= link_to 'Read More',  entry_path(entry), class: 'btn btn-default read-more' %>
 
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
     </div>
-
-
-
-  </div>    <!-- .row -->
-</div>     <!-- .container -->

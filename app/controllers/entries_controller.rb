@@ -7,19 +7,19 @@ class EntriesController < ApplicationController
 
   def new
     @entry = Entry.new
-    @city = City.find(params[:id])
+    @city = City.friendly.find(params[:id])
   end
 
   def edit
-    @entry = Entry.find(params[:id])
+    @entry = Entry.friendly.find(params[:id])
   end
 
   def show
-    @entry = Entry.find(params[:id])
+    @entry = Entry.friendly.find(params[:id])
   end
 
   def update
-    @entry = Entry.find(params[:id])
+    @entry = Entry.friendly.find(params[:id])
         if @entry.update entry_params
           redirect_to @entry
         end
@@ -33,7 +33,7 @@ class EntriesController < ApplicationController
   end
 
   def destroy
-    @entry = Entry.find(params[:id])
+    @entry = Entry.friendly.find(params[:id])
     @entry.destroy
     redirect_to entries_path
   end

@@ -1,12 +1,49 @@
-<h1>City show page</h1>
-<h3><%= @city.name %></h3>
-<p> <%= @city.country %></p>
 
-<% @entries.each do |entry| %>
-<h3><%= entry.title %></h3>
-<p><%= entry.description %></p>
 
-<% end %>
+<section class="top-page">
+<div class="bg">
+  <%= image_tag "#{@city.image}", class: 'city-bg-img' %>
+</div>
+
+<div class="row city-name">
+  <div class="col-sm-12">
+    <h3 class="city-text"><%= @city.name %></h3>
+    <p class="city-text"> <%= @city.country %></p>
+  </div>
+</div>
+</section>
+
+
+<div class="entries-container">
+  <div class="col-sm-offset-1 col-sm-10 entries">
+    <% @entries.each do |entry| %>
+    <div class="container-fluid entry">
+      <div class="row ">
+        <div class="city-img col-sm-2">
+          <%= image_tag "#{@city.image}", class: 'city-icon' %>
+        </div>
+
+        <div class="entry-text col-sm-8">
+          <h3 class="entry-title"><%= link_to entry.title,  entry_path(entry.id), class: 'entry-title-link' %></h3>
+          <p class="entry-body"><%= entry.description %></p>
+        </div>
+      </div>
+      <div class="row btn-bar">
+        <div class="col-sm-offset-2 col-sm-8">
+          <%= link_to edit_entry_path(entry.id), class: 'btn btn-default edit-entry' do %>
+            <i class='glyphicon glyphicon-pencil'></i>
+          <% end %>
+          <%= link_to entry_path(entry.id), method: :delete, class: 'btn btn-default delete-entry', data: 'Are you sure?' do %>
+            <i class='glyphicon glyphicon-trash'></i>
+          <% end %>
+          <%= link_to 'Read More',  entry_path(entry.id), class: 'btn btn-default read-more' %>
+
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
 
 
 

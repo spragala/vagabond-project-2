@@ -17,19 +17,21 @@
 <div class="entries-container">
   <div class="col-sm-offset-1 col-sm-10 entries">
     <%= link_to 'New Post', new_entry_path, class: 'btn btn-default new-post' %>
-    <% @entries.each do |entry| %>
+    <% @records.each do |record| %>
     <div class="container-fluid entry">
       <div class="row ">
         <div class="city-img col-sm-2">
-          <%= image_tag "#{@city.image}", class: 'city-icon' %>
+          <%= image_tag "#{record.image}", class: 'city-icon' %>
+          <p><%=record.name %></p>
         </div>
 
         <div class="entry-text col-sm-8">
-          <h3 class="entry-title"><%= link_to entry.title,  entry_path(entry.id), class: 'entry-title-link' %></h3>
-          <p class="entry-body"><%= entry.description %></p>
+          <h3 class="entry-title"><%= link_to record.title,  entry_path(record.id), class: 'entry-title-link' %></h3>
+          <p class="entry-body"><%= record.description %></p>
         </div>
       </div>
       <div class="row btn-bar">
+
 
       </div>
     </div>

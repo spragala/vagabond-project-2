@@ -1,11 +1,9 @@
-<h1> Edit entries form </h1>
-<h2><%= t(".title") %></h2>
-
+<div id= 'edit-entry-form' class='edit-entry-container col-sm-offset-2 col-sm-8'>
 <%= form_for @entry, html: {method:"put"} do |form| %>
   <%= render partial: '/entries/form', object: form %>
 
   <div class="submit-field">
-    <%= form.submit %>
+    <%= form.submit 'Edit Entry', class: 'btn btn-default'%>
   </div>
 
 <% end %>

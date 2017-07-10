@@ -201,6 +201,11 @@ form#new_user {
   background-color: #eee;
 }
 
+// Edit User form
+.edit-user-container {
+  margin-top: 60px;
+}
+
 // Navbar
 
 .title {
@@ -318,6 +323,15 @@ form#new-entry {
  z-index: 0;
 }
 
+// Edit entry
+.edit-entry-container {
+  position: relative;
+  margin-top: 100px;
+  padding: 20px 0 50px 0;
+  height: 100%;
+  background-color: #eee;
+  z-index: 0;
+}
 
 
 // Media Queries

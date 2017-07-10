@@ -21,6 +21,8 @@ body {
 
 #flash {
   position: absolute;
+  font-size: 20px;
+  font-weight: bold;
   margin-top: 60px;
   margin-left: 40px;
   color: orangered;
@@ -31,7 +33,7 @@ body {
 // Header ---->
 
 div.profile {
-  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5) ), url('./chris-brignola-392.jpg') no-repeat top center;
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5) ), url('./splash-tween.jpg') no-repeat top center;
   background-size: cover;
   height: 400px;
   margin: 0;
@@ -118,8 +120,10 @@ div.entry {
  height: 100px
 }
 
-.city-icon {
-  width: 100%;
+.city-icon, .prof-icon {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
 }
 
 h3.entry-title {

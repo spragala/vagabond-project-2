@@ -31,8 +31,14 @@ class EntriesController < ApplicationController
 
   def create
     @entry = current_user.entries.build(entry_params)
-    if @entry.save
-      redirect_to @entry
+
+    if @entry.valid?
+        @entry.save
+        redirect_to @entry
+      else
+        @entry = Entry.create
+        flash[:error] = "Oops! Title and description " + @entry.errors.messages[:title][0] + "."
+        redirect_to new_entry_path(params[:entry][:city_id])
     end
   end
 

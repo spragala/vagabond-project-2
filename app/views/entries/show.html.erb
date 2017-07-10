@@ -1,29 +1,6 @@
-<div class="row profile">
-  <div class="user-info col-sm-offset-2 col-sm-8">
-    <%= image_tag(current_user.image, class: 'user-img') %>
-    <h1 class="user-name"><%= current_user.name %> </h1>
-    <p class="location">
-      <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-      <%= current_user.location %>
-    <p class="user-since">
-      <span class="glyphicon glyphicon-star"></span>
-      MC Elite since: <%= current_user.created_at.strftime("%m/%d/%Y") %>
-    </p>
-    <br>
-    <ul class='city-nav'>
-      <li class="city-list"><%= link_to 'San Francisco', '/cities/san-francisco', class: 'city-link' %></li>
-      <li class="city-list"><%= link_to 'London', '/cities/london', class: 'city-link' %></li>
-      <li class="city-list"><%= link_to 'Gibraltar', '/cities/gibraltar', class: 'city-link' %></li>
-    </ul>
-  </div>
-  <%= link_to edit_user_path(current_user), class: 'btn btn-default edit-profile' do %>
-    <i class="glyphicon glyphicon-cog"></i>
-  <% end %>
-
-</div>
-
-
-
+<section class="city-show-grad">
+  <%= image_tag "#{@entry.city.image}", class: 'city-bg-img' %>
+  </section>
 
 <div class="entries-container">
   <div class="col-sm-offset-1 col-sm-10 entries">

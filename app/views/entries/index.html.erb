@@ -3,7 +3,7 @@
 
       <div class="row profile">
         <div class="user-info col-sm-offset-2 col-sm-8">
-          <%= image_tag('sample-profile.jpg', class: 'user-img') %>
+          <%= image_tag('', class: 'user-img') %>
           <h1 class="user-name"><%= current_user.name %> </h1>
           <p class="location">
             <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
@@ -14,9 +14,9 @@
           </p>
           <br>
           <ul class='city-nav'>
-            <li class="city-list"><%= link_to 'San Francisco', city_path(1), class: 'city-link' %></li>
-            <li class="city-list"><%= link_to 'London', city_path(2), class: 'city-link' %></li>
-            <li class="city-list"><%= link_to 'Gibraltar', city_path(3), class: 'city-link' %></li>
+            <li class="city-list"><%= link_to 'San Francisco', '/cities/san-francisco', class: 'city-link' %></li>
+            <li class="city-list"><%= link_to 'London', '/cities/london', class: 'city-link' %></li>
+            <li class="city-list"><%= link_to 'Gibraltar', '/cities/gibraltar', class: 'city-link' %></li>
           </ul>
         </div>
         <%= link_to edit_user_path(current_user), class: 'btn btn-default edit-profile' do %>

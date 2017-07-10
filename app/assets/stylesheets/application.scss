@@ -138,6 +138,14 @@ a.entry-title-link {
 
 }
 
+.btn-xs {
+  padding: 8px;
+  float: right;
+  border: none;
+  color: #000000;
+  background-color: none;
+}
+
 a.read-more {
   float: left;
   font-family: 'Raleway', sans-serif;
@@ -297,6 +305,14 @@ form#new-entry {
   border: 1px solid #666;
 }
 
+//Show entry
+.show-entry-container {
+ position: relative;
+ padding: 20px 0 50px 0;
+ height: 100%;
+ background-color: #eee;
+ z-index: 0;
+}
 
 
 

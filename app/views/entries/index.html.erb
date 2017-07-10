@@ -38,10 +38,11 @@
           </div>
           <div class="row btn-bar">
             <div class="col-sm-offset-2 col-sm-8">
+
               <%= link_to edit_entry_path(record.id), class: 'btn btn-default edit-entry' do %>
                 <i class='glyphicon glyphicon-pencil'></i>
               <% end %>
-              <%= link_to entry_path(record.id), method: :delete, class: 'btn btn-default btn-xs', data: { confirm:'Are you sure you want to delete?' } do %>
+              <%= link_to entry_path(record.id), method: :delete, class: 'btn btn-default delete-entry', data: { confirm:'Are you sure you want to delete?' } do %>
                 <i class='glyphicon glyphicon-trash'></i>
               <% end %>
               <%= link_to 'Read More',  entry_path(record.id), class: 'btn btn-default read-more' %>

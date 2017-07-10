@@ -3,6 +3,7 @@ class EntriesController < ApplicationController
 
   def index
     @entries = current_user.entries.order('created_at DESC')
+    @records = Entry.joins("INNER JOIN cities ON entries.city_id = cities.id").select("entries.id, entries.title, entries.description,entries.city_id, cities.image")
   end
 
   def new

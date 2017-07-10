@@ -35,7 +35,7 @@ class Clearance::UsersController < Clearance::BaseController
 
   def create
     @user = user_from_params
-    @user.image = "/assets/images/default-user-image.jpg" if @user.image.empty?
+    @user.image = "default-user-image.png" if @user.image.empty?
 
     if @user.save
       sign_in @user

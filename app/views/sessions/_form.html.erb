@@ -2,6 +2,11 @@
 
 <%= form_for :session, url: session_path, html: { class: 'form-horizontal col-sm-offset-8 col-sm-3 login-form' } do |form| %>
     <h3 class="login-title"> Login </h3>
+    <div id="flash-login">
+      <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+    </div>
     <hr>
     <div class='text-field form-group'>
       <%= form.label :email, class: 'sr-only' %>

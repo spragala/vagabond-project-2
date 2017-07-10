@@ -2,7 +2,11 @@ class EntriesController < ApplicationController
   before_action :require_login
 
   def index
-    @entries = current_user.entries.order('created_at DESC')
+    user_Id = current_user.id
+    @entries = current_user.entries
+
+    @records = @entries.joins("INNER JOIN cities ON entries.city_id = cities.id").select("entries.id, entries.title, entries.description,entries.city_id,entries.user_id,entries.created_at, cities.image")
+    @records = @records.where(:user_id => current_user.id)
   end
 
   def new

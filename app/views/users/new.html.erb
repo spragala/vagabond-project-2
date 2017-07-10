@@ -1,6 +1,6 @@
 
 
-<div id='clearance' class='sign-up-container'>
+<div id='new_user' class='sign-up-container'>
 
 
   <%= form_for(@user, html: { class: 'form-horizontal col-sm-offset-2 col-sm-8 new-form' }) do |form| %>
@@ -10,7 +10,7 @@
 
       <div class="password-field form-group">
         <%= form.label :password %>
-        <%= form.password_field :password, class: 'form-control', :required => true, placeholder: 'Password must be TODO' %>
+        <%= form.password_field :password, class: 'form-control', :required => true, placeholder: 'Must be at least 4 characters.' %>
       </div>
 
       <div class="submit-field">

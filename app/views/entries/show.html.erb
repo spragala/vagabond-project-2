@@ -18,7 +18,7 @@
       </div>
       <div class="row btn-bar">
         <div class="col-sm-offset-2 col-sm-8">
-          <% if signed_in? %>
+          <% if signed_in? && current_user.id == @entry.user.id %>
             <%= link_to edit_entry_path(@entry.id), class: 'btn btn-default edit-entry' do %>
               <i class='glyphicon glyphicon-pencil'></i>
             <% end %>

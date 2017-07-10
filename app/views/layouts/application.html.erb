@@ -18,7 +18,10 @@
         <%= link_to 'Vagabond', entries_path, class: 'navbar-text navbar-left title' %>
         <% if signed_in? %>
           <%= button_to 'Sign out', sign_out_path, method: :delete, class: 'btn btn-default navbar-btn sign-out pull-right' %>
-          <p class="user-nav"> <%= current_user.name %> </p> 
+          <%= link_to edit_user_path(current_user), class: 'btn btn-default edit-profile pull-right' do %>
+            <i class="glyphicon glyphicon-cog"></i>
+          <% end %>
+          <p class="user-nav"> <%= current_user.name %> </p>
         <% else %>
           <%= link_to 'Sign up', sign_up_path, class: 'btn btn-default sign-up navbar-btn pull-right' %>
         <% end %>

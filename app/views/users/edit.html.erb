@@ -1,10 +1,15 @@
-<div id= 'edit-user-form' class= 'edit-user-container col-sm-offset-2 col-sm-8'>
-  <%= form_for @user do |form| %>
-    <%= render partial: '/users/form', object: form %>
+<div id='new_user' class= 'edit-user-container'>
 
-    <div class="submit-field">
-      <%= form.submit 'Update User', class: 'btn btn-default'%>
-    </div>
+  <%= form_for(@user, html: { class: 'form-horizontal col-sm-offset-2 col-sm-8 new-form' }) do |form| %>
+    <div class='sign-up-form col-sm-offset-2 col-sm-8'>
+      <%= render partial: '/users/form', object: form %>
 
-  <% end %>
+      <div class="submit-field">
+        <%= form.submit 'Update User', class: 'btn btn-default'%>
+      </div>
+
+      <%= link_to 'Back',  entries_path, class: 'btn btn-default read-more' %>
+
+    <% end %>
+  </div>
 </div>

@@ -2,7 +2,7 @@
 
   <%= form_for(@entry, html: {class: 'form-horizontal col-sm-offset-2 col-sm-8 new-entry'}  ) do |form| %>
 
-  <div class='sign-up-form col-sm-offset-2 col-sm-8'>
+  <div class='new-entry-form col-sm-offset-2 col-sm-8'>
 
     <%= render partial: '/entries/form', object: form %>
     <%= form.hidden_field :city_id, :value => @city.id %>

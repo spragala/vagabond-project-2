@@ -16,6 +16,14 @@
 
 body {
   font-family: 'Raleway', sans-serif;
+  background-color: #eee;
+}
+
+#flash {
+  position: absolute;
+  margin-top: 60px;
+  margin-left: 40px;
+  color: orangered;
 }
 
 // Profile Page / Entries index
@@ -93,7 +101,7 @@ a.edit-profile:hover {
 .entries-container {
  position: relative;
  padding: 20px 0 50px 0;
- height: 100vh;
+ height: 100%;
  background-color: #eee;
  z-index: 0;
 }
@@ -210,7 +218,6 @@ section.welcome-section {
 .login-form {
   padding: 20px 0 20px 0;
   border: solid 1px #eee;
-  border-radius: 8px;
   margin-top: -200px;
   margin-bottom: 100px;
   background-color: #fff;
@@ -241,10 +248,11 @@ a.thumbnail {
 // City pages
 
 .city-bg-img {
-  width: 100%;
+  max-width: 100%;
   position: relative;
-  z-index: -99999;
-  height: 900px;
+  z-index: 1;
+  max-height: auto;
+  box-shadow: 0px 15px 20px -10px #666;
 }
 
 .city-name {
@@ -254,12 +262,18 @@ a.thumbnail {
   top: 200px;
   right: 0;
   left: 0;
+  z-index: 2;
 
 }
 
 .city-text {
   font-weight: 900;
   font-size: 100px;
+}
+
+.btn.new-post {
+  background-color: transparent;
+  border: 1px solid #666;
 }
 
 

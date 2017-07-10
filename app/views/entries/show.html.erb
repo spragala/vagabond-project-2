@@ -1,11 +1,59 @@
-<div class="show-entry-container">
-  <div class="col-sm-offset-1 col-sm-10 entry">
+<div class="row profile">
+  <div class="user-info col-sm-offset-2 col-sm-8">
+    <%= image_tag(current_user.image, class: 'user-img') %>
+    <h1 class="user-name"><%= current_user.name %> </h1>
+    <p class="location">
+      <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+      <%= current_user.location %>
+    <p class="user-since">
+      <span class="glyphicon glyphicon-star"></span>
+      MC Elite since: <%= current_user.created_at.strftime("%m/%d/%Y") %>
+    </p>
+    <br>
+    <ul class='city-nav'>
+      <li class="city-list"><%= link_to 'San Francisco', '/cities/san-francisco', class: 'city-link' %></li>
+      <li class="city-list"><%= link_to 'London', '/cities/london', class: 'city-link' %></li>
+      <li class="city-list"><%= link_to 'Gibraltar', '/cities/gibraltar', class: 'city-link' %></li>
+    </ul>
+  </div>
+  <%= link_to edit_user_path(current_user), class: 'btn btn-default edit-profile' do %>
+    <i class="glyphicon glyphicon-cog"></i>
+  <% end %>
 
-    <h3><%= @entry.title %></h3>
-    <p> <%= @entry.description %></p>
-    <p>Author: <%= current_user.name %></p>
+</div>
 
-    <%= button_to "Delete", @entry, method: :delete %>
+
+
+
+<div class="entries-container">
+  <div class="col-sm-offset-1 col-sm-10 entries">
+
+    <div class="container-fluid entry">
+      <div class="row ">
+        <div class="city-img col-sm-2">
+          <%= image_tag(@entry.user.image, class: 'city-icon') %>
+          <p class="author"> <%= @entry.user.name %> </p>
+        </div>
+        <div class="entry-text col-sm-8">
+          <h3 class="entry-title"><%= link_to @entry.title,  entry_path(@entry.id), class: 'entry-title-link' %></h3>
+          <p class="entry-body"><%= @entry.description %></p>
+        </div>
+      </div>
+      <div class="row btn-bar">
+        <div class="col-sm-offset-2 col-sm-8">
+          <% if signed_in? %>
+            <%= link_to edit_entry_path(@entry.id), class: 'btn btn-default edit-entry' do %>
+              <i class='glyphicon glyphicon-pencil'></i>
+            <% end %>
+            <%= link_to entry_path(@entry.id), method: :delete, class: 'btn btn-default delete-entry', data: { confirm:'Are you sure you want to delete?' } do %>
+              <i class='glyphicon glyphicon-trash'></i>
+            <% end %>
+          <% end %>
+          <%= link_to 'Back',  entries_path, class: 'btn btn-default read-more' %>
+
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>

@@ -1,9 +1,7 @@
 
-
-
       <div class="row profile">
         <div class="user-info col-sm-offset-2 col-sm-8">
-          <%= image_tag('', class: 'user-img') %>
+          <%= image_tag(current_user.image, class: 'user-img') %>
           <h1 class="user-name"><%= current_user.name %> </h1>
           <p class="location">
             <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>

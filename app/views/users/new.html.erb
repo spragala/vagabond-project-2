@@ -8,6 +8,11 @@
 
       <%= render partial: '/users/form', object: form %>
 
+      <div class="password-field form-group">
+        <%= form.label :password %>
+        <%= form.password_field :password, class: 'form-control', :required => true, placeholder: 'Password must be TODO' %>
+      </div>
+
       <div class="submit-field">
         <%= form.submit 'Sign Up', class: 'btn btn-default' %>
         <%= link_to 'Back', sign_in_path, class: 'btn btn-default' %>

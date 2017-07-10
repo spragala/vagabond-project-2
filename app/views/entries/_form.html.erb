@@ -1,9 +1,9 @@
-<div class="text-field">
+<div class="text-field form-group">
   <%= form.label :title %>
-  <%= form.text_field :title, type: 'title' %>
+  <%= form.text_field :title, type: 'title', class: 'form-control', :required => true, placeholder: 'Title' %>
 </div>
 
-<div class="text-field">
+<div class="text-area form-group">
   <%= form.label :description %>
-  <%= form.text_field :description %>
+  <%= form.text_area :description, type: 'location', class: 'form-control', :required => true, placeholder: 'Description' %>
 </div>

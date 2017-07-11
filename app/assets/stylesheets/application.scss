@@ -212,7 +212,7 @@ form#new_user {
   background-color: #fff;
   box-shadow: 0px 15px 20px -10px #666;
   padding: 40px 0 40px 0;
-  margin-top: 60px;
+  margin-bottom: 200px;
 }
 
 // Navbar
@@ -315,24 +315,12 @@ a.thumbnail {
 
 
 // New Entry
-form#new-entry {
-  background-color: #eee;
-  box-shadow: 0px 15px 20px -10px #666;
-  padding: 40px 20px 40px 20px;
-  margin-top: 40px;
+
+#new_entry {
+  margin-top: -200px;
+  position: relative;
+  z-index: 2;
 }
-
-.new-entry-container {
-  height: 100vh;
-  background-color: #ee3;
-
-}
-
-.new-entry {
-  background-size: contain;
-  margin-top: 100px;
-}
-
 
 .btn.new-post {
   background-color: transparent;

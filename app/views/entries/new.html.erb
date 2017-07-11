@@ -1,19 +1,19 @@
-<div id='new-entry' class='new-entry-container'>
 
-  <%= form_for(@entry, html: {class: 'form-horizontal col-sm-offset-2 col-sm-8 new-entry'}  ) do |form| %>
+  <%= image_tag "#{@city.image}", class: 'city-bg-img' %>
 
-  <div class='new-entry-form col-sm-offset-2 col-sm-8'>
 
-    <%= render partial: '/entries/form', object: form %>
-    <%= form.hidden_field :city_id, :value => @city.id %>
+<div id='new_entry' class='new-entry-container'>
+  <%= form_for(@entry, html: {class: 'form-horizontal col-sm-offset-2 col-sm-8 new-form'}  ) do |form| %>
+    <div class='new-entry-form col-sm-offset-2 col-sm-8'>
 
-    <div class="submit-field">
-      <%= form.submit 'New Entry', class: 'btn btn-default'%>
-      <%= link_to 'Return to City', city_path, class: 'btn btn-default' %>
+      <%= render partial: '/entries/form', object: form %>
+      <%= form.hidden_field :city_id, :value => @city.id %>
+
+      <div class="submit-field">
+        <%= form.submit 'New Entry', class: 'btn btn-default'%>
+        <%= link_to 'Return to City', city_path, class: 'btn btn-default pull-right' %>
+      </div>
+
     </div>
-
-  </div>
-
   <% end %>
-
 </div>

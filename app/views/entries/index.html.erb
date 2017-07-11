@@ -22,11 +22,11 @@
       </div>
 
     <div class="entries-container">
-      <div class="col-sm-offset-1 col-sm-10 entries">
+      <div class="col-sm-offset-2 col-sm-7 entries">
         <% @records.each do |record| %>
         <div class="container-fluid entry">
           <div class="row ">
-            <div class="city-img col-sm-2">
+            <div class="city-img col-sm-3">
               <%= image_tag(record.image, class: 'city-icon') %>
             </div>
             <div class="entry-text col-sm-8">
@@ -35,7 +35,7 @@
             </div>
           </div>
           <div class="row btn-bar">
-            <div class="col-sm-offset-2 col-sm-8">
+            <div class="col-sm-offset-3 col-sm-8">
 
               <%= link_to edit_entry_path(record.id), class: 'btn btn-default edit-entry' do %>
                 <i class='glyphicon glyphicon-pencil'></i>

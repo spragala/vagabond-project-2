@@ -138,6 +138,8 @@ div.entry {
   height: 120px;
   width: 120px;
   border-radius: 50%;
+  display: block;
+  margin: auto;
 }
 
 h3.entry-title {
@@ -334,6 +336,10 @@ a.thumbnail {
  height: 100%;
  background-color: #eee;
  z-index: 0;
+}
+
+p.author {
+  text-align: center;
 }
 
 // Edit entry

@@ -16,7 +16,9 @@
 
 <div class="entries-container">
   <div class="col-sm-offset-1 col-sm-10 entries">
+    <h1 class="headline"> Latest Posts
     <%= link_to 'New Post', new_entry_path, class: 'btn btn-default new-post' %>
+    </h1>
     <% @records.each do |record| %>
     <div class="container-fluid entry">
       <div class="row ">

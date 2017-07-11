@@ -2,7 +2,7 @@
 
 ### Add a few lines about the travel app
 
-Heroku Link:
+Heroku Link: https://shrouded-reef-89184.herokuapp.com/
 
 ## Technologies used:
 - Rails version 5.1.2
@@ -22,10 +22,11 @@ Heroku Link:
 ## Planned Features:
 - Google Maps integration to show all cities on a main map
 - Social capabilities/adding comments for each post.
+- Receive badges for increased activity on the site
 
 
 ## Screenshot of the app
-![screenshot #1]
+![screenshot #1](/public/vagabond_splash.png?raw=true "Vagabond")
 
 
 

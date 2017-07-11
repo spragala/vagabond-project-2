@@ -1,6 +1,6 @@
 # Vagabond
 
-### Add a few lines about the travel app
+Vagabond is intended to be a travel app to connect tweens together where users can post information on particular cities.
 
 Heroku Link: https://shrouded-reef-89184.herokuapp.com/
 

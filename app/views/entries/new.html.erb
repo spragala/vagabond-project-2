@@ -5,6 +5,11 @@
 <div id='new_entry' class='new-entry-container'>
   <%= form_for(@entry, html: {class: 'form-horizontal col-sm-offset-2 col-sm-8 new-form-city'}  ) do |form| %>
     <div class='new-entry-form col-sm-offset-2 col-sm-8'>
+      <div id="flash-entry">
+        <% flash.each do |key, value| %>
+          <div class="flash <%= key %>"><%= value %></div>
+        <% end %>
+      </div>
 
       <%= render partial: '/entries/form', object: form %>
       <%= form.hidden_field :city_id, :value => @city.id %>

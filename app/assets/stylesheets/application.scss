@@ -225,6 +225,14 @@ form#new_user {
   margin-top: 150px;
 }
 
+form.new-form-city {
+  background-color: #fff;
+  box-shadow: 0px 15px 20px -10px #666;
+  padding: 40px 0 40px 0;
+  margin-bottom: 200px;
+  margin-top: 150px;
+}
+
 // Navbar
 
 .title {
@@ -327,7 +335,7 @@ a.thumbnail {
 // New Entry
 
 #new_entry {
-  margin-top: -200px;
+  margin-top: -100px;
   position: relative;
   z-index: 2;
 }

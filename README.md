@@ -1,24 +1,45 @@
-# README
+# Vagabond
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Add a few lines about the travel app
 
-Things you may want to cover:
+Heroku Link:
 
-* Ruby version
+## Technologies used:
+- Rails version 5.1.2
+- Ruby version 2.4.0
+- Clearance gem for managing User sessions
+- Postgresql as the database
+- Bootstrap for styling and CSS
 
-* System dependencies
+## Existing Features:
+- Users navigate to a cities page linked from the homepage and browse posts related to that city. However to read the whole post or to add new posts they need to login / sign up for the application.
+- Once signed up a user can
+    - Add new posts to a particular city page
+    - Update his own posts
+    - Delete his own posts
+- User can update his own profile from the edit profile  section of the navbar.
 
-* Configuration
+## Planned Features:
+- Google Maps integration to show all cities on a main map
+- Social capabilities/adding comments for each post.
 
-* Database creation
 
-* Database initialization
+## Screenshot of the app
+![screenshot #1]
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Endpoints:
+- get "/sign_in" => "clearance/sessions#new", as: "sign_in"
+- delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
+- get "/sign_up" => "clearance/users#new", as: "sign_up"
 
-* ...
+- get "/entries" => "entries#index", as: "entries"
+- post "/entries" => "entries#create"
+- get "/cities/:id/entries/new" => "entries#new", as: "new_entry"
+- get "/entries/:id/edit" => "entries#edit", as: "edit_entry"
+- get "/entries/:id" => "entries#show", as: "entry"
+- put "/entries/:id" => "entries#update", as: "update_entry"
+- delete "/entries/:id" => "entries#destroy"
+
+- get '/cities/:id' => 'cities#show', as: 'city'

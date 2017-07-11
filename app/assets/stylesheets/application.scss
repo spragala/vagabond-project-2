@@ -129,6 +129,12 @@ a.edit-profile:hover {
  z-index: 0;
 }
 
+.headline {
+   color: #666;
+   border-bottom: 3px solid #666;
+   padding-bottom: 20px;
+}
+
 div.entry {
  margin: 25px 0 25px 0;
  background-color: #fff;
@@ -242,6 +248,11 @@ form.new-form-city {
 
 // Navbar
 
+.navbar-fixed-top.fixednav {
+    background-color: rgba(0,0,0, 0.3);
+    // border-bottom: 1px solid #666; -- maybe?
+  }
+
 .title {
   font-family: 'Raleway', sans-serif;
   font-weight: 900;
@@ -350,6 +361,7 @@ a.thumbnail {
 .btn.new-post {
   background-color: transparent;
   border: 1px solid #666;
+  float: right;
 }
 
 //Show entry
